@@ -7,7 +7,7 @@ export const exportCVS = async (supabaseClient) => {
             const d = row.tweet_data;
             return `${d.tweet_id},${row.username},${d.text.replace(/,/g, '')},${d.created_at}`;
         }).join('\n');
-        writeFileSync('../data/tweets.csv', `tweet_id,username,text,created_at\n${csv}`);
+        writeFileSync('src/data/tweets.csv', `tweet_id,username,text,created_at\n${csv}`);
         console.log('Datos exportados a tweets.csv');
     } catch (error) {
         console.error('Error exportando a CSV:', error.message);
