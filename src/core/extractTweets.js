@@ -1,5 +1,6 @@
 import { saveTweets } from "./saveTweets.js"
 import { clients } from "./setupClients.js"
+import { tweetFilter } from "./tweetFilter.js";
 
 export const extractTweets = async ({
     accounts,
@@ -51,7 +52,12 @@ export const extractTweets = async ({
 
             for await (const tweet of tweets) {
                 if (tweetsFetched >= maxTweets) break;
-                await saveTweets(supabaseClient, tweet, username);
+                let tweetFiltered = await tweetFilter(tweet)
+
+                if (Object.keys(tweetFiltered).length === 0) {
+                    await saveTweets(supabaseClient, tweet, username);
+                };
+
                 tweetsFetched++;
             }
 

@@ -15,9 +15,9 @@ async function main() {
 
     const params = {
         accounts: ['rafalejov'],
-        maxTweets: 5,
-        startDate: '2025-03-20',
-        endDate: '2025-03-21',
+        maxTweets: 10,
+        startDate: '2024-06-21',
+        endDate: '2024-07-06',
     };
 
     try {
