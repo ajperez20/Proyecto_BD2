@@ -14,10 +14,10 @@ async function main() {
     };
 
     const params = {
-        accounts: ['jpeseteiroDT'],
-        maxTweets: 10,
+        accounts: ['tomapapa'],
+        maxTweets: 15,
         startDate: '2024-06-21',
-        endDate: '2024-06-24',
+        endDate: '2024-06-23',
     };
 
     try {
