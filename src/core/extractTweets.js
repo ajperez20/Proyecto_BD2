@@ -52,11 +52,12 @@ export const extractTweets = async ({
 
             for await (const tweet of tweets) {
                 if (tweetsFetched >= maxTweets) break;
-                let tweetFiltered = await tweetFilter(tweet)
 
-                if (Object.keys(tweetFiltered).length === 0) {
-                    await saveTweets(supabaseClient, tweet, username);
-                };
+                const tweetFiltered = await tweetFilter(tweet);
+
+                if (Object.keys(tweetFiltered).length > 0) {
+                    await saveTweets(supabaseClient, tweetFiltered, username);
+                }
 
                 tweetsFetched++;
             }

@@ -17,7 +17,7 @@ async function main() {
         accounts: ['tomapapa'],
         maxTweets: 15,
         startDate: '2024-06-21',
-        endDate: '2024-06-23',
+        endDate: '2024-06-30',
     };
 
     try {
